@@ -3,12 +3,12 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="fun content">
+    <meta name="keywords" content="INTUITIVE">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Home</title>
+    <title>Claim</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Home.css" media="screen">
+<link rel="stylesheet" href="Claim.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 3.1.0, nicepage.com">
@@ -22,7 +22,7 @@
 		"name": "Content Farm",
 		"url": "index.html"
 }</script>
-    <meta property="og:title" content="Home">
+    <meta property="og:title" content="Claim">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#478ac9">
     <link rel="canonical" href="index.html">
@@ -61,11 +61,71 @@
         </nav>
         <p class="u-custom-font u-text u-text-1">CONTENT FARM</p>
       </div></header>
-    <section class="u-align-left u-clearfix u-image u-shading u-section-1" src="" id="sec-c016">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h1 class="u-text u-text-default u-title u-text-1" data-animation-name="slideIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Left">fun content</h1>
-        <p class="u-large-text u-text u-text-default u-text-variant u-text-2" data-animation-name="slideIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Left">Fun content brought to your fingertips.</p>
-        <a href="#" class="u-btn u-button-style u-palette-2-base u-btn-1" data-animation-name="slideIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Left">Sign iN with access Code</a>
+    <section class="u-clearfix u-image u-shading u-section-1" id="sec-7ce2" data-image-width="960" data-image-height="540">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-custom-font u-text u-text-default u-text-1">Have a claim code? Fill out the form below to get immediate access to fun content!</p>
+        <div class="u-clearfix u-custom-html u-custom-html-1">
+          <style> input[type="text"],
+    select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: black;
+    }
+    input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    .formish {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    } </style>
+          <div class="formalign">
+            <div class="logindiv">
+              <form id="login" class="formish"><!--LOGIN FORM-->
+                <input id="username" class="username" placeholder="Name" type="text">
+                <br>
+                <input id="password" class="password" placeholder="Claim Code" type="text">
+                <br>
+                <input value="Claim" class="login" type="submit">
+              </form>
+              <p style="visibility: hidden" id="passerr"></p>
+            </div>
+          </div>
+          <script> <!--LOGIN FORM HANDLER-->
+          var theForm = document.getElementById("login");
+          var user = document.getElementById("username");
+          var pass = document.getElementById("password");
+          theForm.onsubmit = function(e) {
+            var input =
+              encodeURIComponent(user.value) +
+              "___" +
+              encodeURIComponent(pass.value);
+            var logins = ["apple"]
+            if (logins.includes(pass.value)) {
+              fetch("https://maker.ifttt.com/trigger/content-farm/with/key/r5J_P2fP4Myjinry0A1te?value1=" + user.value + "&value2=" + pass.value);
+              location = "https://www.example.com";
+            } else {
+              document.getElementById("passerr").innerHTML = "Incorrect Access Code: " + (pass.value);
+              document.getElementById("passerr").style.visibility = "visible";
+            }
+            return false;
+          }; </script>
+        </div>
       </div>
     </section>
     
