@@ -105,24 +105,28 @@
             </div>
           </div>
           <script> <!--LOGIN FORM HANDLER-->
-          var theForm = document.getElementById("login");
-          var user = document.getElementById("username");
-          var pass = document.getElementById("password");
-          theForm.onsubmit = function(e) {
-            var input =
-              encodeURIComponent(user.value) +
-              "___" +
-              encodeURIComponent(pass.value);
-            var logins = ["apple"]
-            if (logins.includes(pass.value)) {
-              fetch("https://maker.ifttt.com/trigger/content-farm/with/key/r5J_P2fP4Myjinry0A1te?value1=" + user.value + "&value2=" + pass.value + "&value3=Claim Page");
-              location = "/games-Reo2CPftRX";
-            } else {
-              document.getElementById("passerr").innerHTML = "Incorrect Access Code: " + (pass.value);
-              document.getElementById("passerr").style.visibility = "visible";
-            }
-            return false;
-          }; </script>
+              var theForm = document.getElementById("login");
+              var user = document.getElementById("username");
+              var pass = document.getElementById("password");
+              theForm.onsubmit = function(e) {
+                var input =
+                  encodeURIComponent(user.value) +
+                  "___" +
+                  encodeURIComponent(pass.value);
+                var logins = ["apple"]
+                if (logins.includes(pass.value)) {
+                  document.getElementById("passerr").innerHTML = "Loading...";
+                  document.getElementById("passerr").style.visibility = "visible";
+                  fetch("https://maker.ifttt.com/trigger/content-farm/with/key/r5J_P2fP4Myjinry0A1te?value1=" + user.value + "&value2=" + pass.value + "&value3=Claim Page");
+                  setTimeout(function() {
+                     location = "/games-Reo2CPftRX";
+                  }, 1000);
+                } else {
+                  document.getElementById("passerr").innerHTML = "Incorrect Access Code: " + (pass.value);
+                  document.getElementById("passerr").style.visibility = "visible";
+                }
+                return false;
+              }; </script>
         </div>
       </div>
     </section>
