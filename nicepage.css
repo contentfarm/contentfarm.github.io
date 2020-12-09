@@ -31501,17 +31501,11 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-sheet-1 {
-  min-height: 70px;
-}
-
-.u-header .u-image-1 {
-  width: 70px;
-  left: 0;
-  right: auto;
+  min-height: 89px;
 }
 
 .u-header .u-menu-1 {
-  margin: 17px 0 0 auto;
+  margin: 0 0 0 auto;
 }
 
 .u-header .u-nav-1 {
@@ -31523,44 +31517,107 @@ a.u-link.u-text-hover-grey-90:hover {
   font-size: 1.25rem;
 }
 
+.u-header .u-layout-wrap-1 {
+  width: 478px;
+  margin: -62px auto -27px 0;
+}
+
+.u-header .u-image-1 {
+  min-height: 89px;
+  background-image: url("images/favicon.png");
+}
+
+.u-header .u-container-layout-1 {
+  padding: 30px;
+}
+
+.u-header .u-layout-cell-2 {
+  min-height: 89px;
+}
+
+.u-header .u-container-layout-2 {
+  padding: 19px 30px;
+}
+
 .u-header .u-text-1 {
   font-size: 1.875rem;
   font-family: Poppins;
-  margin: -42px 821px 11px 81px;
+  margin: 1px 40px 0 -20px;
 }
 
 .u-header .u-btn-1 {
   padding: 0;
 }
 @media (max-width: 1199px) {
-  .u-header .u-image-1 {
-    margin-right: auto;
-    margin-left: 0;
-  }
-
   .u-header .u-menu-1 {
     width: auto;
+  }
+
+  .u-header .u-layout-wrap-1 {
+    width: 478px;
+    margin-top: -62px;
+    margin-right: 0;
+    margin-left: auto;
   }
 
   .u-header .u-text-1 {
     margin-top: -42px;
     margin-right: 702px;
-    margin-left: 0;
+    width: 238px;
   }
 }
 @media (max-width: 991px) {
+  .u-header .u-sheet-1 {
+    min-height: 542px;
+  }
+
+  .u-header .u-layout-cell-2 {
+    min-height: 100px;
+  }
+
   .u-header .u-text-1 {
     margin-right: 482px;
   }
 }
 @media (max-width: 767px) {
+  .u-header .u-sheet-1 {
+    min-height: 1121px;
+  }
+
+  .u-header .u-image-1 {
+    min-height: 485px;
+  }
+
+  .u-header .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-header .u-container-layout-2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .u-header .u-text-1 {
     margin-right: 302px;
   }
 }
 @media (max-width: 575px) {
+  .u-header .u-sheet-1 {
+    min-height: 813px;
+  }
+
+  .u-header .u-layout-wrap-1 {
+    width: 340px;
+  }
+
+  .u-header .u-image-1 {
+    min-height: 105px;
+  }
+
   .u-header .u-text-1 {
     margin-right: 102px;
+    margin-left: 0;
   }
 }
 .u-footer {
