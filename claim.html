@@ -102,7 +102,6 @@
                 <input id="password" class="password" placeholder="Claim Code" type="text">
                 <br>
                 <input value="Claim" class="login" type="submit">
-                <input type="hidden" value="" name="recaptchaResponse">
               </form>
               <p style="visibility: hidden" id="passerr"></p>
             </div>
@@ -116,7 +115,7 @@
                   encodeURIComponent(user.value) +
                   "___" +
                   encodeURIComponent(pass.value);
-                var logins = ["5539-1529-6469","553915296469","9081-5469-4096","908154694096"]
+                var logins = ["5539-1529-6469","553915296469","9081-5469-4096","908154694096","1425-7623-3853","142576233853","7268-3801-1771","726838011771"]
                 if (logins.includes(pass.value)) {
                   document.getElementById("passerr").innerHTML = "Loading...";
                   document.getElementById("passerr").style.visibility = "visible";
