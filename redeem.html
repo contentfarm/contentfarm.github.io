@@ -3,12 +3,12 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="INTUITIVE">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Contact - Content Farm</title>
+    <title>Claim - Content Farm</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="contact.css" media="screen">
+<link rel="stylesheet" href="redeem.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 3.1.0, nicepage.com">
@@ -23,7 +23,7 @@
 		"name": "Content Farm",
 		"url": "index.html"
 }</script>
-    <meta property="og:title" content="Contact - Content Farm">
+    <meta property="og:title" content="Claim - Content Farm">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#478ac9">
     <link rel="canonical" href="index.html">
@@ -60,9 +60,11 @@
           <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" href="home.html" data-page-id="78824480">CONTENT FARM</a>
         </p>
       </div></header>
-    <section class="u-clearfix u-image u-parallax u-shading u-section-1" id="sec-55db" data-image-width="960" data-image-height="540">
+    <section class="u-clearfix u-image u-shading u-section-1" id="sec-7ce2" data-image-width="960" data-image-height="540">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-text u-text-default u-text-1">Contact</h1>
+        <h1 class="u-align-center u-text u-text-1">Redeem Access Codes</h1>
+        <p class="u-align-center u-custom-font u-text u-text-default u-text-2">Have an access code? Fill out the form below to get immediate access to fun content!<br>Want to gain access a second time? Use the same access code, it doesn't expire!
+        </p>
         <div class="u-clearfix u-custom-html u-custom-html-1">
           <style> input[type="text"],
     select {
@@ -95,36 +97,44 @@
     } </style>
           <div class="formalign">
             <div class="logindiv">
-              <form id="contact" class="formish"><!--LOGIN FORM-->
-                <input id="name" placeholder="Name" type="text">
+              <form id="login" class="formish"><!--LOGIN FORM-->
+                <input id="username" class="username" placeholder="Name" type="text">
                 <br>
-                <input id="email" placeholder="Email" type="text">
+                <input id="password" class="password" placeholder="Access Code" type="text">
                 <br>
-                <input id="msg" placeholder="Message" type="text">
-                <br>
-                <input value="Send Message" class="login" type="submit">
+                <input value="Redeem" class="login" type="submit">
               </form>
               <p style="visibility: hidden" id="passerr"></p>
             </div>
           </div>
           <script> <!--LOGIN FORM HANDLER-->
-          var theForm = document.getElementById("contact");
-          var namey = document.getElementById("name");
-          var email = document.getElementById("email");
-          var msg = document.getElementById("msg");
-          theForm.onsubmit = function(e) {
-            if (true) {
-              document.getElementById("passerr").innerHTML = "Message Sent";
-              document.getElementById("passerr").style.visibility = "visible";
-              fetch("https://maker.ifttt.com/trigger/content-farm/with/key/r5J_P2fP4Myjinry0A1te?value1=" + namey.value + "&value2=" + email.value + "&value3=" + msg.value);
-              setTimeout(function() {
-                     window.location.reload();
+              var theForm = document.getElementById("login");
+              var user = document.getElementById("username");
+              var pass = document.getElementById("password");
+              theForm.onsubmit = function(e) {
+                var input =
+                  encodeURIComponent(user.value) +
+                  "___" +
+                  encodeURIComponent(pass.value);
+                var logins = ["5539-1529-6469","553915296469","9081-5469-4096","908154694096","1425-7623-3853","142576233853","7268-3801-1771","726838011771"]
+                if (logins.includes(pass.value)) {
+                  document.getElementById("passerr").innerHTML = "Loading...";
+                  document.getElementById("passerr").style.visibility = "visible";
+                  fetch("https://maker.ifttt.com/trigger/content-farm/with/key/r5J_P2fP4Myjinry0A1te?value1=" + user.value + "&value2=" + pass.value + "&value3=Claim Page");
+                  setTimeout(function() {
+                     location = "/games-Reo2CPftRX";
                   }, 1000);
-            }
-            return false;
-          }; </script>
+                } else {
+                  document.getElementById("passerr").innerHTML = "Invalid access code: " + (pass.value);
+                  document.getElementById("passerr").style.visibility = "visible";
+                }
+                return false;
+              }; </script>
         </div>
-        <p class="u-text u-text-default u-text-2">You can also contact us by emailing us at: <a href="mailto:contact@contentfarm.anonaddy.com" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" target="_blank">contact@contentfarm.anonaddy.com</a>
+        <p class="u-text u-text-3">By redeeming an access code, you agree to the <a href="terms-and-conditions.html" data-page-id="153508694" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">Terms and Conditions</a>
+        </p>
+        <p class="u-text u-text-4">
+          <span style="font-weight: 400;"></span>If you are on a phone, please come again when you have access to a computer. Most of the content on this website won't work on a phone.
         </p>
       </div>
     </section>
