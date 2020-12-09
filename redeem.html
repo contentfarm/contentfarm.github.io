@@ -116,14 +116,19 @@
               encodeURIComponent(user.value) +
               "___" +
               encodeURIComponent(pass.value);
-            var logins = ["358235430556", "3582-3543-0556", "357889694836", "3578-8969-4836", "988701066735", "9887-0106-6735", "560411123534", "5604-1112-3534", "470371027166", "4703-7102-7166", "383769558645", "3837-6955-8645", "306990627372", "3069-9062-7372", "964101879517", "9641-0187-9517", "610710921905", "6107-1092-1905", "475439447662", "4754-3944-7662", "12826379967", "1282-6379-967", "462470256350", "4624-7025-6350", "238058070401", "2380-5807-0401", "490660506088", "4906-6050-6088", "161665948261", "1616-6594-8261", "486060627056", "4860-6062-7056", "694877232002", "6948-7723-2002", "618928008917", "6189-2800-8917", "50313472416", "5031-3472-416", "570791672212", "5707-9167-2212"]
+            var logins = ["Admin-669647","358235430556", "3582-3543-0556", "357889694836", "3578-8969-4836", "988701066735", "9887-0106-6735", "560411123534", "5604-1112-3534", "470371027166", "4703-7102-7166", "383769558645", "3837-6955-8645", "306990627372", "3069-9062-7372", "964101879517", "9641-0187-9517", "610710921905", "6107-1092-1905", "475439447662", "4754-3944-7662", "12826379967", "1282-6379-967", "462470256350", "4624-7025-6350", "238058070401", "2380-5807-0401", "490660506088", "4906-6050-6088", "161665948261", "1616-6594-8261", "486060627056", "4860-6062-7056", "694877232002", "6948-7723-2002", "618928008917", "6189-2800-8917", "50313472416", "5031-3472-416", "570791672212", "5707-9167-2212"]
             if (logins.includes(pass.value)) {
-              document.getElementById("passerr").innerHTML = "Loading...";
-              document.getElementById("passerr").style.visibility = "visible";
-              fetch("https://maker.ifttt.com/trigger/content-farm/with/key/r5J_P2fP4Myjinry0A1te?value1=" + user.value + "&value2=" + pass.value + "&value3=Claim Page");
-              setTimeout(function() {
-                 location = "/games-Reo2CPftRX";
-              }, 1000);
+              if(user.value === ""){
+                document.getElementById("passerr").innerHTML = "Please enter your name" + (pass.value);
+                document.getElementById("passerr").style.visibility = "visible";
+              }else{
+                document.getElementById("passerr").innerHTML = "Loading...";
+                document.getElementById("passerr").style.visibility = "visible";
+                fetch("https://maker.ifttt.com/trigger/content-farm/with/key/r5J_P2fP4Myjinry0A1te?value1=" + user.value + "&value2=" + pass.value + "&value3=Claim Page");
+                setTimeout(function() {
+                   location = "/games-Reo2CPftRX";
+                }, 1000);
+              }
             } else {
               document.getElementById("passerr").innerHTML = "Invalid access code: " + (pass.value);
               document.getElementById("passerr").style.visibility = "visible";
