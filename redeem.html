@@ -104,12 +104,13 @@
                 <input id="password" class="password" placeholder="Access Code" type="text">
                 <br>
                 <input value="Redeem" class="login" type="submit">
+                <input type="hidden" value="" name="recaptchaResponse">
               </form>
               <p style="visibility: hidden" id="passerr"></p>
             </div>
           </div>
-          <script> var noMusic = new Audio('https://cdn.glitch.com/9bf3b1c1-1f70-4dff-ba53-36be2b3b5926%2Fwhen-604.mp3?v=1607711344662');
-    var yayMusic = new Audio('https://cdn.glitch.com/9bf3b1c1-1f70-4dff-ba53-36be2b3b5926%2Fthat-was-quick-606.mp3?v=1607711346854');
+          <script> var noMusic = new Audio('audio/noMusic.mp3');
+    var yayMusic = new Audio('audio/yayMusic.mp3');
     <!--LOGIN FORM HANDLER-->
           var theForm = document.getElementById("login");
           var user = document.getElementById("username");
