@@ -109,6 +109,7 @@
               <p style="visibility: hidden" id="passerr"></p>
             </div>
           </div>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
           <script> //<!--LOGIN FORM HANDLER-->
           var theForm = document.getElementById("contact");
           var namey = document.getElementById("name");
@@ -118,7 +119,10 @@
             if (true) {
               document.getElementById("passerr").innerHTML = "Message Sent";
               document.getElementById("passerr").style.visibility = "visible";
-              fetch("https://maker.ifttt.com/trigger/content-farm/with/key/r5J_P2fP4Myjinry0A1te?value1=" + namey.value + "&value2=" + email.value + "&value3=" + msg.value);
+              $.getJSON("https://api64.ipify.org?format=json",
+              function(data) {
+                  fetch(`https://maker.ifttt.com/trigger/notif/with/key/r5J_P2fP4Myjinry0A1te?value1=Content+Farm&value2=Contact+-+${namey.value}+-+${email.value}+-+${msg.value}&value3=${data.ip}`);
+              })
               setTimeout(function() {
                      window.location.reload();
                   }, 1000);
