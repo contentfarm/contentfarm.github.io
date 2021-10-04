@@ -26,13 +26,6 @@
 		"url": "index.html",
 		"logo": "images/FullTextLogo1.png"
 }</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-  $.getJSON("https://api64.ipify.org?format=json",
-  function(data) {
-          fetch(`https://maker.ifttt.com/trigger/notif/with/key/r5J_P2fP4Myjinry0A1te?value1=Content+Farm&value2=Home+Page+-+${data.ip}`);
-  })
-</script>
     <meta property="og:title" content="Home - Content Farm">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#478ac9">
@@ -148,5 +141,12 @@
         </p>
       </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script >
+        $.getJSON("https://api64.ipify.org?format=json",
+        function(data) {
+            fetch(`https://maker.ifttt.com/trigger/notif/with/key/r5J_P2fP4Myjinry0A1te?value1=Content+Farm&value2=Home&value3=${data.ip}`);
+        })
+    </script>
   </body>
 </html>
