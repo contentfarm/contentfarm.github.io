@@ -124,7 +124,7 @@
                 fetch("https://timothy-ha.duckdns.org/api/webhook/content-farm-XF31yqgVdFZMRy4umkvydqVB", {
                   method: "POST",
                   headers: {'Content-Type': 'application/json'}, 
-                  body: JSON.stringify({ip: data.ip, page: "contact",name: namey.value, email: email.value, msg: msg.value})
+                  body: JSON.stringify({ip: data.ip, page: "form",name: namey.value, email: email.value, msg: msg.value})
                 }).then(res => {
                   console.log("Request complete! response:", res);
                 });
