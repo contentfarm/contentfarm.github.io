@@ -141,5 +141,18 @@
           <a href="terms-and-conditions.html" data-page-id="153508694" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">Terms and Conditions</a>&nbsp; |&nbsp; © 2020 Content Farm&nbsp; |&nbsp; <a href="contact.html" data-page-id="19300222" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">Contact Us</a>
         </p>
       </div></footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script >
+          $.getJSON("https://api64.ipify.org?format=json",
+          function(data) {
+            fetch("https://timothy-ha.duckdns.org/api/webhook/content-farm-XF31yqgVdFZMRy4umkvydqVB", {
+              method: "POST",
+              headers: {'Content-Type': 'application/json'}, 
+              body: JSON.stringify({ip: data.ip, page: "contact"})
+            }).then(res => {
+              console.log("Request complete! response:", res);
+            });
+          })
+      </script>
   </body>
 </html>

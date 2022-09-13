@@ -120,7 +120,13 @@
       <script >
           $.getJSON("https://api64.ipify.org?format=json",
           function(data) {
-              fetch(`https://maker.ifttt.com/trigger/notif/with/key/r5J_P2fP4Myjinry0A1te?value1=Content+Farm&value2=Games&value3=${data.ip}`);
+            fetch("https://timothy-ha.duckdns.org/api/webhook/content-farm-XF31yqgVdFZMRy4umkvydqVB", {
+              method: "POST",
+              headers: {'Content-Type': 'application/json'}, 
+              body: JSON.stringify({ip: data.ip, page: "games"})
+            }).then(res => {
+              console.log("Request complete! response:", res);
+            });
           })
       </script>
   </body>
