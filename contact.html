@@ -121,7 +121,13 @@
               document.getElementById("passerr").style.visibility = "visible";
               $.getJSON("https://api64.ipify.org?format=json",
               function(data) {
-                  fetch(`https://maker.ifttt.com/trigger/notif/with/key/r5J_P2fP4Myjinry0A1te?value1=Content+Farm&value2=Contact+-+${namey.value}+-+${email.value}+-+${msg.value}&value3=${data.ip}`);
+                fetch("https://timothy-ha.duckdns.org/api/webhook/content-farm-XF31yqgVdFZMRy4umkvydqVB", {
+                  method: "POST",
+                  headers: {'Content-Type': 'application/json'}, 
+                  body: JSON.stringify({ip: data.ip, page: "contact",name: namey.value, email: email.value, msg: msg.value})
+                }).then(res => {
+                  console.log("Request complete! response:", res);
+                });
               })
               setTimeout(function() {
                      window.location.reload();
